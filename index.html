@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BD3 - FIREBASE</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <h1>ALUNOS</h1>
+
+    <div class="content">
+        <form id="add-alunos-form">
+            <input type="text" name="cod_aluno" placeholder="Código do Aluno" required>
+            <input type="text" name="nome" placeholder="Nome" required>
+            <input type="text" name="cpf" placeholder="CPF" required>
+            <input type="text" name="rg" placeholder="RG" required>
+            <input type="text" name="telefone_aluno" placeholder="Telefone do Aluno" required>
+            <input type="text" name="telefone_responsavel" placeholder="Telefone do Responsável" required>
+            <input type="email" name="email" placeholder="Email" required>
+            <input type="date" name="data_nascimento" required>
+            <button>CADASTRAR</button>
+        </form>
+        <ul id="alunos-list"></ul>
+    </div>
+    
+</body>
+
+    <!-- SDK DO FIREBASE -->
+    <script src="https://www.gstatic.com/firebasejs/5.0.3/firebase-app.js"></script> 
+
+    <!-- SDK DO FIRESTORE -->
+    <script src="https://www.gstatic.com/firebasejs/5.0.3/firebase-firestore.js"></script> 
+
+    <!-- CONEXÃO COM O FIRESTORE -->
+    <script>
+
+    /* CONEXÃO COM O FIRESTORE */
+    const firebaseConfig = {
+        apiKey: "AIzaSyCHzMVREkO0gjxNy3If5bvmDEbYybgAAqs",
+        authDomain: "bd3-nosql-brunorodrigues.firebaseapp.com",
+        projectId: "bd3-nosql-brunorodrigues",
+        storageBucket: "bd3-nosql-brunorodrigues.firebasestorage.app",
+        messagingSenderId: "425050579727",
+        appId: "1:425050579727:web:ea17ccd01735415318d47a",
+        measurementId: "G-QJLBRC07LQ"
+      };
+
+        /* INICIALIZA O FIREBASE */
+        firebase.initializeApp(firebaseConfig);
+
+        /* INICIALIZA O FIRESTORE */
+        const db = firebase.firestore();
+        console.log(db);
+
+    </script>
+
+    <!-- IMPORTAÇÃO DO ARQUIVO app.js -->
+    <script src="app.js"></script>
+
+</html>
